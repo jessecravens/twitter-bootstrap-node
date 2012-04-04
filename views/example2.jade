@@ -1,0 +1,1399 @@
+.container
+    header#overview.jumbotron.subhead
+        h1 Javascript for Bootstrap
+        p.lead
+          | Bring Bootstrap's components to life—now with 12 custom
+          a(href='http://jquery.com/', target='_blank') jQuery 
+          | plugins.
+          .subnav
+            ul.nav.nav-pills
+              li
+                a(href='#javascript') All plugins
+              li
+                a(href='#modals') Modal
+              li
+                a(href='#dropdowns') Dropdown
+              li
+                a(href='#scrollspy') Scrollspy
+              li
+                a(href='#tabs') Tab
+              li
+                a(href='#tooltips') Tooltip
+              li
+                a(href='#popovers') Popover
+              li
+                a(href='#alerts') Alert
+              li
+                a(href='#buttons') Button
+              li
+                a(href='#collapse') Collapse
+              li
+                a(href='#carousel') Carousel
+              li
+                a(href='#typeahead') Typeahead
+      section#javascript
+        .page-header
+          h1
+            | jQuery plugins
+            small A dozen Bootstrap plugins to get you started
+        .row
+          .span3
+            label
+              h3
+                a(href='./javascript.html#modals') Modals
+              p
+                | A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#dropdowns') Dropdowns
+              p
+                | Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#scrollspy') Scrollspy
+              p
+                | Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#tabs') Togglable tabs
+              p
+                | Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.
+        .row
+          .span3
+            label
+              h3
+                a(href='./javascript.html#tooltips') Tooltips
+              p
+                | A new take on the jQuery Tipsy plugin, Tooltips don't rely on images—they use CSS3 for animations and data-attributes for local title storage.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#popovers') Popovers
+                small.muted *
+              p
+                | Add small overlays of content, like those on the iPad, to any element for housing secondary information.
+              p.muted
+                strong *
+                | Requires
+                a(href='#tooltips') Tooltips
+                | to be included
+          .span3
+            label
+              h3
+                a(href='./javascript.html#alerts') Alert messages
+              p The alert plugin is a tiny class for adding close functionality to alerts.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#buttons') Buttons
+              p
+                | Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
+        .row(style='margin-bottom: 9px;')
+          .span3
+            label
+              h3
+                a(href='./javascript.html#collapse') Collapse
+              p
+                | Get base styles and flexible support for collapsible components like accordions and navigation.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#carousel') Carousel
+              p
+                | Create a merry-go-round of any content you wish to provide an interactive slideshow of content.
+          .span3
+            label
+              h3
+                a(href='./javascript.html#typeahead') Typeahead
+              p
+                | A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.
+          .span3
+            label
+              h3
+                | Transitions
+                small.muted *
+              p
+                | For simple transition effects, include bootstrap-transition.js once to slide in modals or fade out alerts.
+              p.muted
+                strong *
+                | Required for animation in plugins
+        .alert.alert-info
+          strong Heads up!
+          | All javascript plugins require the latest version of jQuery.
+      section#modals
+        .page-header
+          h1
+            | Modals
+            small bootstrap-modal.js
+        .row
+          .span3.columns
+            h3 About modals
+            p
+              | A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.
+            a.btn(href='assets/js/bootstrap-modal.js', target='_blank') Download file
+          .span9.columns
+            h2 Static example
+            p Below is a statically rendered modal.
+            .well.modal-example(style='background-color: #888; border: none;')
+              .modal(style='position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1;')
+                .modal-header
+                  a.close(href='#', data-dismiss='modal') ×
+                  h3 Modal header
+                .modal-body
+                  p One fine body…
+                .modal-footer
+                  a.btn(href='#') Close
+                  a.btn.btn-primary(href='#') Save changes
+            h2 Live demo
+            p
+              | Toggle a modal via javascript by clicking the button below. It will slide down and fade in from the top of the page.
+            #myModal.modal.hide.fade
+              .modal-header
+                a.close(data-dismiss='modal') ×
+                h3 Modal Heading
+              .modal-body
+                h4 Text in a modal
+                p
+                  | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.
+                h4 Popover in a modal
+                p
+                  | This
+                  a.btn.popover-test(href='#', title='A Title', data-content='And here\'s some amazing content. It\'s very engaging. right?') button
+                  | should trigger a popover on hover.
+                h4 Tooltips in a modal
+                p
+                  a.tooltip-test(href='#', title='Tooltip') This link
+                  | and
+                  a.tooltip-test(href='#', title='Tooltip') that link
+                  | should have tooltips on hover.
+                hr
+                h4 Overflowing text to show optional scrollbar
+                p
+                  | We set a fixed
+                  code max-height
+                  | on the
+                  code .modal-body
+                  | . Watch it overflow with all this extra lorem ipsum text we've included.
+                p
+                  | Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                p
+                  | Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                p
+                  | Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                p
+                  | Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                p
+                  | Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                p
+                  | Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+              .modal-footer
+                a.btn(href='#', data-dismiss='modal') Close
+                a.btn.btn-primary(href='#') Save changes
+            a.btn.btn-primary.btn-large(data-toggle='modal', href='#myModal') Launch demo modal
+            hr
+            h2 Using bootstrap-modal
+            p Call the modal via javascript:
+            pre.prettyprint.linenums.
+              \n$('#myModal').modal(options)              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 50px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td backdrop
+                  td boolean
+                  td true
+                  td
+                    | Includes a modal-backdrop element. Alternatively, specify
+                    code static
+                    | for a backdrop which doesn't close the modal on click.
+                tr
+                  td keyboard
+                  td boolean
+                  td true
+                  td Closes the modal when escape key is pressed
+                tr
+                  td show
+                  td boolean
+                  td true
+                  td Shows the modal when initialized.
+            h3 Markup
+            p
+              | You can activate modals on your page easily without having to write a single line of javascript. Just set
+              code data-toggle="modal"
+              | on a controller element with a
+              code data-target="#foo"
+              | or
+              code href="#foo"
+              | which corresponds to a modal element id, and when clicked, it will launch your modal.
+            p
+              | Also, to add options to your modal instance, just include them as additional data attributes on either the control element or the modal markup itself.
+            pre.prettyprint.linenums.
+              \n<a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
+                            
+            pre.prettyprint.linenums.
+              \n<div class="modal" id="myModal">
+                <div class="modal-header">
+                  <a class="close" data-dismiss="modal">×</a>
+                  <h3>Modal header</h3>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" class="btn">Close</a>
+                  <a href="#" class="btn btn-primary">Save changes</a>
+                </div>
+              </div>
+                            
+            .alert.alert-info
+              strong Heads up!
+              | If you want your modal to animate in and out, just add a
+              code .fade
+              | class to the
+              code .modal
+              | element (refer to the demo to see this in action) and include bootstrap-transition.js.
+            h3 Methods
+            h4 .modal(options)
+            p
+              | Activates your content as a modal. Accepts an optional options
+              code object
+              | .
+            pre.prettyprint.linenums.
+              \n$('#myModal').modal({
+                keyboard: false
+              })              
+            h4 .modal('toggle')
+            p Manually toggles a modal.
+            pre.prettyprint.linenums.
+              \n$('#myModal').modal('toggle')              
+            h4 .modal('show')
+            p Manually opens a modal.
+            pre.prettyprint.linenums.
+              \n$('#myModal').modal('show')              
+            h4 .modal('hide')
+            p Manually hides a modal.
+            pre.prettyprint.linenums.
+              \n$('#myModal').modal('hide')              
+            h3 Events
+            p
+              | Bootstrap's modal class exposes a few events for hooking into modal functionality.
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 150px;') Event
+                  th Description
+              tbody
+                tr
+                  td show
+                  td
+                    | This event fires immediately when the
+                    code show
+                    | instance method is called.
+                tr
+                  td shown
+                  td
+                    | This event is fired when the modal has been made visible to the user (will wait for css transitions to complete).
+                tr
+                  td hide
+                  td
+                    | This event is fired immediately when the
+                    code hide
+                    | instance method has been called.
+                tr
+                  td hidden
+                  td
+                    | This event is fired when the modal has finished being hidden from the user (will wait for css transitions to complete).
+            pre.prettyprint.linenums.
+              \n$('#myModal').on('hidden', function () {
+                // do something…
+              })              
+      section#dropdowns
+        .page-header
+          h1
+            | Dropdowns
+            small bootstrap-dropdown.js
+        .row
+          .span3.columns
+            h3 About dropdowns
+            p
+              | Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.
+            a.btn(href='assets/js/bootstrap-dropdown.js', target='_blank') Download file
+          .span9.columns
+            h2 Examples
+            p Click on the dropdown nav links in the navbar and pills below to test dropdowns.
+            #navbar-example.navbar.navbar-static
+              .navbar-inner
+                .container(style='width: auto;')
+                  a.brand(href='#') Project Name
+                  ul.nav
+                    li.dropdown
+                      a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        | Dropdown
+                        b.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#') Action
+                        li
+                          a(href='#') Another action
+                        li
+                          a(href='#') Something else here
+                        li.divider
+                        li
+                          a(href='#') Separated link
+                    li.dropdown
+                      a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        | Dropdown 2
+                        b.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#') Action
+                        li
+                          a(href='#') Another action
+                        li
+                          a(href='#') Something else here
+                        li.divider
+                        li
+                          a(href='#') Separated link
+                  ul.nav.pull-right
+                    li#fat-menu.dropdown
+                      a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        | Dropdown 3
+                        b.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#') Action
+                        li
+                          a(href='#') Another action
+                        li
+                          a(href='#') Something else here
+                        li.divider
+                        li
+                          a(href='#') Separated link
+            ul.nav.nav-pills
+              li.active
+                a(href='#') Regular link
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropdown
+                  b.caret
+                ul#menu1.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropdown 2
+                  b.caret
+                ul#menu2.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropdown 3
+                  b.caret
+                ul#menu3.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+            hr
+            h2 Using bootstrap-dropdown.js
+            p Call the dropdowns via javascript:
+            pre.prettyprint.linenums.
+              \n$('.dropdown-toggle').dropdown()              
+            h3 Markup
+            p
+              | To quickly add dropdown functionality to any element just add
+              code data-toggle="dropdown"
+              | and any valid bootstrap dropdown will automatically be activated.
+            .alert.alert-info
+              strong Heads up!
+              | You may optionally target a specific dropdown by using
+              code data-target="#fat"
+              | or
+              code href="#fat"
+              | .
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-pills">
+                <li class="active"><a href="#">Regular link</a></li>
+                <li class="dropdown" id="menu1">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+                    Dropdown
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+                ...
+              </ul>              
+            h3 Methods
+            h4 $().dropdown()
+            p A programatic api for activating menus for a given navbar or tabbed navigation.
+      section#scrollspy
+        .page-header
+          h1
+            | ScrollSpy
+            small bootstrap-scrollspy.js
+        .row
+          .span3.columns
+            p
+              | The ScrollSpy plugin is for automatically updating nav targets based on scroll position.
+            a.btn(href='assets/js/bootstrap-scrollspy.js', target='_blank') Download file
+          .span9.columns
+            h2 Example navbar with scrollspy
+            p
+              | Scroll the area below and watch the navigation update. The dropdown sub items will be highlighted as well. Try it!
+            #navbarExample.navbar.navbar-static
+              .navbar-inner
+                .container(style='width: auto;')
+                  a.brand(href='#') Project Name
+                  ul.nav
+                    li
+                      a(href='#fat') @fat
+                    li
+                      a(href='#mdo') @mdo
+                    li.dropdown
+                      a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        | Dropdown
+                        b.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#one') one
+                        li
+                          a(href='#two') two
+                        li.divider
+                        li
+                          a(href='#three') three
+            .scrollspy-example(data-spy='scroll', data-target='#navbarExample', data-offset='0')
+              h4#fat @fat
+              p
+                | Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+              h4#mdo @mdo
+              p
+                | Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.
+              h4#one one
+              p
+                | Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.
+              h4#two two
+              p
+                | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.
+              h4#three three
+              p
+                | Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+              p
+                | Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+            hr
+            h2 Using bootstrap-scrollspy.js
+            p Call the scrollspy via javascript:
+            pre.prettyprint.linenums.
+              \n$('#navbar').scrollspy()              
+            h3 Markup
+            p
+              | To easily add scrollspy behavior to your topbar navigation, just add
+              code data-spy="scroll"
+              | to the element you want to spy on (most typically this would be the body).
+            pre.prettyprint.linenums.
+              \n<body data-spy="scroll" >...</body>              
+            .alert.alert-info
+              strong Heads up!
+              | Navbar links must have resolvable id targets. For example, a
+              code <a href="#home">home</a>
+              | must correspond to something in the dom like
+              code <div id="home"></div>
+              | .
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 100px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td offset
+                  td number
+                  td 10
+                  td Pixels to offset from top when calculating position of scroll.
+      section#tabs
+        .page-header
+          h1
+            | Togglable tabs
+            small bootstrap-tab.js
+        .row
+          .span3.columns
+            p
+              | This plugin adds quick, dynamic tab and pill functionality for transitioning through local content.
+            a.btn(href='assets/js/bootstrap-tab.js', target='_blank') Download file
+          .span9.columns
+            h2 Example tabs
+            p Click the tabs below to toggle between hidden panes, even via dropdown menus.
+            ul#tab.nav.nav-tabs
+              li.active
+                a(href='#home', data-toggle='tab') Home
+              li
+                a(href='#profile', data-toggle='tab') Profile
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  | Dropdown
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#dropdown1', data-toggle='tab') @fat
+                  li
+                    a(href='#dropdown2', data-toggle='tab') @mdo
+            #myTabContent.tab-content
+              #home.tab-pane.fade.in.active
+                p
+                  | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+              #profile.tab-pane.fade
+                p
+                  | Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+              #dropdown1.tab-pane.fade
+                p
+                  | Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+              #dropdown2.tab-pane.fade
+                p
+                  | Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+            hr
+            h2 Using bootstrap-tab.js
+            p Enable tabbable tabs via javascript:
+            pre.prettyprint.linenums.
+              \n$('#myTab').tab('show')              
+            h3 Markup
+            p
+              | You can activate a tab or pill navigation without writing any javascript by simply specifying
+              code data-toggle="tab"
+              | or
+              code data-toggle="pill"
+              | on an element.
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-tabs">
+                <li><a href="#home" data-toggle="tab">Home</a></li>
+                <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+              </ul>              
+            h3 Methods
+            h4 $().tab
+            p
+              | Activates a tab element and content container. Tab should have either a `data-target` or an `href` targeting a container node in the dom.
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-tabs">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#settings">Settings</a></li>
+              </ul>
+              
+              <div class="tab-content">
+                <div class="tab-pane active" id="home">...</div>
+                <div class="tab-pane" id="profile">...</div>
+                <div class="tab-pane" id="messages">...</div>
+                <div class="tab-pane" id="settings">...</div>
+              </div>
+              
+              <script>
+                $(function () {
+                  $('.tabs a:last').tab('show')
+                })
+              </script>              
+            h3 Events
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 150px;') Event
+                  th Description
+              tbody
+                tr
+                  td show
+                  td
+                    | This event fires on tab show, but before the new tab has been shown. Use
+                    code event.target
+                    | and
+                    code event.relatedTarget
+                    | to target the active tab and the previous active tab (if available) respectively.
+                tr
+                  td shown
+                  td
+                    | This event fires on tab show after a tab has been shown. Use
+                    code event.target
+                    | and
+                    code event.relatedTarget
+                    | to target the active tab and the previous active tab (if available) respectively.
+            pre.prettyprint.linenums.
+              \n$('a[data-toggle="tab"]').on('shown', function (e) {
+                e.target // activated tab
+                e.relatedTarget // previous tab
+              })              
+      section#tooltips
+        .page-header
+          h1
+            | Tooltips
+            small bootstrap-tooltip.js
+        .row
+          .span3.columns
+            h3 About Tooltips
+            p
+              | Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use css3 for animations, and data-attributes for local title storage.
+            a.btn(href='assets/js/bootstrap-tooltip.js', target='_blank') Download file
+          .span9.columns
+            h2 Example use of Tooltips
+            p Hover over the links below to see tooltips:
+            .tooltip-demo.well
+              p.muted(style='margin-bottom: 0;')
+                | Tight pants next level keffiyeh
+                a(href='#', rel='tooltip', title='first tooltip') you probably
+                | haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel
+                a(href='#', rel='tooltip', title='Another tooltip') have a
+                | terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A
+                a(href='#', rel='tooltip', title='Another one here too') really ironic
+                | artisan whatever keytar, scenester farm-to-table banksy Austin
+                a(href='#', rel='tooltip', title='The last tip!') twitter handle
+                | freegan cred raw denim single-origin coffee viral.
+            hr
+            h2 Using bootstrap-tooltip.js
+            p Trigger the tooltip via javascript:
+            pre.prettyprint.linenums.
+              \n$('#example').tooltip(options)              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 100px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td animation
+                  td boolean
+                  td true
+                  td apply a css fade transition to the tooltip
+                tr
+                  td placement
+                  td string|function
+                  td 'top'
+                  td how to position the tooltip - top | bottom | left | right
+                tr
+                  td selector
+                  td string
+                  td false
+                  td
+                    | If a selector is provided, tooltip objects will be delegated to the specified targets.
+                tr
+                  td title
+                  td string | function
+                  td ''
+                  td default title value if `title` tag isn't present
+                tr
+                  td trigger
+                  td string
+                  td 'hover'
+                  td how tooltip is triggered - hover | focus | manual
+                tr
+                  td delay
+                  td number | object
+                  td 0
+                  td
+                    p delay showing and hiding the tooltip (ms)
+                    p If a number is supplied, delay is applied to both hide/show
+                    p
+                      | Object structure is:
+                      code delay: { show: 500, hide: 100 }
+            .alert.alert-info
+              strong Heads up!
+              | Options for individual tooltips can alternatively be specified through the use of data attributes.
+            h3 Markup
+            p
+              | For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a selector option.
+            pre.prettyprint.linenums.
+              \n<a href="#" rel="tooltip" title="first tooltip">hover over me</a>
+                            
+            h3 Methods
+            h4 $().tooltip(options)
+            p Attaches a tooltip handler to an element collection.
+            h4 .tooltip('show')
+            p Reveals an element's tooltip.
+            pre.prettyprint.linenums.
+              \n$('#element').tooltip('show')              
+            h4 .tooltip('hide')
+            p Hides an element's tooltip.
+            pre.prettyprint.linenums.
+              \n$('#element').tooltip('hide')              
+            h4 .tooltip('toggle')
+            p Toggles an element's tooltip.
+            pre.prettyprint.linenums.
+              \n$('#element').tooltip('toggle')              
+      section#popovers
+        .page-header
+          h1
+            | Popovers
+            small bootstrap-popover.js
+        .row
+          .span3.columns
+            h3 About popovers
+            p
+              | Add small overlays of content, like those on the iPad, to any element for housing secondary information.
+            p.muted
+              strong *
+              | Requires
+              a(href='#tooltips') Tooltip
+              | to be included
+            a.btn(href='assets/js/bootstrap-popover.js', target='_blank') Download file
+          .span9.columns
+            h2 Example hover popover
+            p Hover over the button to trigger the popover.
+            .well
+              a.btn.btn-danger(href='#', rel='popover', title='A Title', data-content='And here\'s some amazing content. It\'s very engaging. right?') hover for popover
+            hr
+            h2 Using bootstrap-popover.js
+            p Enable popovers via javascript:
+            pre.prettyprint.linenums.
+              \n$('#example').popover(options)              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 100px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td animation
+                  td boolean
+                  td true
+                  td apply a css fade transition to the tooltip
+                tr
+                  td placement
+                  td string|function
+                  td 'right'
+                  td how to position the popover - top | bottom | left | right
+                tr
+                  td selector
+                  td string
+                  td false
+                  td
+                    | if a selector is provided, tooltip objects will be delegated to the specified targets
+                tr
+                  td trigger
+                  td string
+                  td 'hover'
+                  td how tooltip is triggered - hover | focus | manual
+                tr
+                  td title
+                  td string | function
+                  td ''
+                  td default title value if `title` attribute isn't present
+                tr
+                  td content
+                  td string | function
+                  td ''
+                  td default content value if `data-content` attribute isn't present
+                tr
+                  td delay
+                  td number | object
+                  td 0
+                  td
+                    p delay showing and hiding the popover (ms)
+                    p If a number is supplied, delay is applied to both hide/show
+                    p
+                      | Object structure is:
+                      code delay: { show: 500, hide: 100 }
+            .alert.alert-info
+              strong Heads up!
+              | Options for individual popovers can alternatively be specified through the use of data attributes.
+            h3 Markup
+            p
+              | For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a the selector option.
+            h3 Methods
+            h4 $().popover(options)
+            p Initializes popovers for an element collection.
+            h4 .popover('show')
+            p Reveals an elements popover.
+            pre.prettyprint.linenums.
+              \n$('#element').popover('show')              
+            h4 .popover('hide')
+            p Hides an elements popover.
+            pre.prettyprint.linenums.
+              \n$('#element').popover('hide')              
+            h4 .popover('toggle')
+            p Toggles an elements popover.
+            pre.prettyprint.linenums.
+              \n$('#element').popover('toggle')              
+      section#alerts
+        .page-header
+          h1
+            | Alert messages
+            small bootstrap-alert.js
+        .row
+          .span3.columns
+            h3 About alerts
+            p The alert plugin is a tiny class for adding close functionality to alerts.
+            a.btn(href='assets/js/bootstrap-alert.js', target='_blank') Download
+          .span9.columns
+            h2 Example alerts
+            p The alerts plugin works on regular alert messages, and block messages.
+            .alert.fade.in
+              a.close(data-dismiss='alert', href='#') ×
+              strong Holy guacamole!
+              | Best check yo self, you're not looking too good.
+            .alert.alert-block.alert-error.fade.in
+              a.close(data-dismiss='alert', href='#') ×
+              h4.alert-heading Oh snap! You got an error!
+              p
+                | Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
+              p
+                a.btn.btn-danger(href='#') Take this action
+                a.btn(href='#') Or do this
+            hr
+            h2 Using bootstrap-alert.js
+            p Enable dismissal of an alert via javascript:
+            pre.prettyprint.linenums.
+              \n$(".alert").alert()              
+            h3 Markup
+            p
+              | Just add
+              code data-dismiss="alert"
+              | to your close button to automatically give an alert close functionality.
+            pre.prettyprint.linenums.
+              \n<a class="close" data-dismiss="alert" href="#">&times;</a>              
+            h3 Methods
+            h4 $().alert()
+            p
+              | Wraps all alerts with close functionality. To have your alerts animate out when closed, make sure they have the
+              code .fade
+              | and
+              code .in
+              | class already applied to them.
+            h4 .alert('close')
+            p Closes an alert.
+            pre.prettyprint.linenums.
+              \n$(".alert").alert('close')              
+            h3 Events
+            p
+              | Bootstrap's alert class exposes a few events for hooking into alert functionality.
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 150px;') Event
+                  th Description
+              tbody
+                tr
+                  td close
+                  td
+                    | This event fires immediately when the
+                    code close
+                    | instance method is called.
+                tr
+                  td closed
+                  td
+                    | This event is fired when the alert has been closed (will wait for css transitions to complete).
+            pre.prettyprint.linenums.
+              \n$('#my-alert').bind('closed', function () {
+                // do something…
+              })              
+      section#buttons
+        .page-header
+          h1
+            | Buttons
+            small bootstrap-button.js
+        .row
+          .span3.columns
+            h3 About
+            p
+              | Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
+            a.btn(href='assets/js/bootstrap-button.js', target='_blank') Download file
+          .span9.columns
+            h2 Example uses
+            p Use the buttons plugin for states and toggles.
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td Stateful
+                  td
+                    button#fat-btn.btn.btn-primary(data-loading-text='loading...')
+                      | Loading State
+                tr
+                  td Single toggle
+                  td
+                    button.btn.btn-primary(data-toggle='button') Single Toggle
+                tr
+                  td Checkbox
+                  td
+                    .btn-group(data-toggle='buttons-checkbox')
+                      button.btn.btn-primary Left
+                      button.btn.btn-primary Middle
+                      button.btn.btn-primary Right
+                tr
+                  td Radio
+                  td
+                    .btn-group(data-toggle='buttons-radio')
+                      button.btn.btn-primary Left
+                      button.btn.btn-primary Middle
+                      button.btn.btn-primary Right
+            hr
+            h2 Using bootstrap-button.js
+            p Enable buttons via javascript:
+            pre.prettyprint.linenums.
+              \n$('.tabs').button()              
+            h3 Markup
+            p
+              | Data attributes are integral to the button plugin. Check out the example code below for the various markup types.
+            pre.prettyprint.linenums.
+              \n<!-- Add data-toggle="button" to activate toggling on a single button -->
+              <button class="btn" data-toggle="button">Single Toggle</button>
+              
+              <!-- Add data-toggle="buttons-checkbox" for checkbox style toggling on btn-group -->
+              <div class="btn-group" data-toggle="buttons-checkbox">
+                <button class="btn">Left</button>
+                <button class="btn">Middle</button>
+                <button class="btn">Right</button>
+              </div>
+              
+              <!-- Add data-toggle="buttons-radio" for radio style toggling on btn-group -->
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button class="btn">Left</button>
+                <button class="btn">Middle</button>
+                <button class="btn">Right</button>
+              </div>
+                            
+            h3 Methods
+            h4 $().button('toggle')
+            p Toggles push state. Gives the button the appearance that it has been activated.
+            .alert.alert-info
+              strong Heads up!
+              | You can enable auto toggling of a button by using the
+              code data-toggle
+              | attribute.
+            pre.prettyprint.linenums.
+              \n<button class="btn" data-toggle="button" >…</button>              
+            h4 $().button('loading')
+            p
+              | Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute
+              code data-loading-text
+              | .
+            pre.prettyprint.linenums.
+              \n<button class="btn" data-loading-text="loading stuff..." >...</button>              
+            .alert.alert-info
+              strong Heads up!
+              a(href='https://github.com/twitter/bootstrap/issues/793') Firefox persists the disabled state across page loads
+              | . A workaround for this is to use
+              code autocomplete="off"
+              | .
+            h4 $().button('reset')
+            p Resets button state - swaps text to original text.
+            h4 $().button(string)
+            p Resets button state - swaps text to any data defined text state.
+            pre.prettyprint.linenums.
+              \n<button class="btn" data-complete-text="finished!" >...</button>
+              <script>
+                $('.btn').button('complete')
+              </script>              
+      section#collapse
+        .page-header
+          h1
+            | Collapse
+            small bootstrap-collapse.js
+        .row
+          .span3.columns
+            h3 About
+            p
+              | Get base styles and flexible support for collapsible components like accordions and navigation.
+            a.btn(href='assets/js/bootstrap-collapse.js', target='_blank') Download file
+          .span9.columns
+            h2 Example accordion
+            p Using the collapse plugin, we built a simple accordion style widget:
+            #accordion2.accordion
+              .accordion-group
+                .accordion-heading
+                  a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseOne')
+                    | Collapsible Group Item #1
+                #collapseOne.accordion-body.collapse.in
+                  .accordion-inner
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              .accordion-group
+                .accordion-heading
+                  a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseTwo')
+                    | Collapsible Group Item #2
+                #collapseTwo.accordion-body.collapse
+                  .accordion-inner
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              .accordion-group
+                .accordion-heading
+                  a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseThree')
+                    | Collapsible Group Item #3
+                #collapseThree.accordion-body.collapse
+                  .accordion-inner
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            hr
+            h2 Using bootstrap-collapse.js
+            p Enable via javascript:
+            pre.prettyprint.linenums.
+              \n$(".collapse").collapse()              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 50px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td parent
+                  td selector
+                  td false
+                  td
+                    | If selector then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior)
+                tr
+                  td toggle
+                  td boolean
+                  td true
+                  td Toggles the collapsible element on invocation
+            h3 Markup
+            p
+              | Just add
+              code data-toggle="collapse"
+              | and a
+              code data-target
+              | to element to automatically assign control of a collapsible element. The
+              code data-target
+              | attribute accepts a css selector to apply the collapse to. Be sure to add the class
+              code collapse
+              | to the collapsible element. If you'd like it to default open, add the additional class
+              code in
+              | .
+            pre.prettyprint.linenums.
+              \n<button class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+                simple collapsible
+              </button>
+              
+              <div id="demo" class="collapse in"> … </div>              
+            .alert.alert-info
+              strong Heads up!
+              | To add accordion-like group management to a collapsible control, add the data attribute
+              code data-parent="#selector"
+              | . Refer to the demo to see this in action.
+            h3 Methods
+            h4 .collapse(options)
+            p
+              | Activates your content as a collapsible element. Accepts an optional options
+              code object
+              | .
+              pre.prettyprint.linenums.
+                \n$('#myCollapsible').collapse({
+                  toggle: false
+                })                
+              h4 .collapse('toggle')
+              p Toggles a collapsible element to shown or hidden.
+              h4 .collapse('show')
+              p Shows a collapsible element.
+              h4 .collapse('hide')
+              p Hides a collapsible element.
+              h3 Events
+              p
+                | Bootstrap's collapse class exposes a few events for hooking into collapse functionality.
+              table.table.table-bordered.table-striped
+                thead
+                  tr
+                    th(style='width: 150px;') Event
+                    th Description
+                tbody
+                  tr
+                    td show
+                    td
+                      | This event fires immediately when the
+                      code show
+                      | instance method is called.
+                  tr
+                    td shown
+                    td
+                      | This event is fired when a collapse element has been made visible to the user (will wait for css transitions to complete).
+                  tr
+                    td hide
+                    td
+                      | This event is fired immediately when the
+                      code hide
+                      | method has been called.
+                  tr
+                    td hidden
+                    td
+                      | This event is fired when a collapse element has been hidden from the user (will wait for css transitions to complete).
+              pre.prettyprint.linenums.
+                \n$('#myCollapsible').on('hidden', function () {
+                  // do something…
+                })                
+      section#carousel
+        .page-header
+          h1
+            | Carousel
+            small bootstrap-carousel.js
+        .row
+          .span3.columns
+            h3 About
+            p A generic plugin for cycling through elements. A merry-go-round.
+            a.btn(href='assets/js/bootstrap-carousel.js', target='_blank') Download file
+          .span9.columns
+            h2 Example carousel
+            p Watch the slideshow below.
+            #myCarousel.carousel.slide
+              .carousel-inner
+                .item.active
+                  img(src='assets/img/bootstrap-mdo-sfmoma-01.jpg', alt='')
+                  .carousel-caption
+                    h4 First Thumbnail label
+                    p
+                      | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                .item
+                  img(src='assets/img/bootstrap-mdo-sfmoma-02.jpg', alt='')
+                  .carousel-caption
+                    h4 Second Thumbnail label
+                    p
+                      | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                .item
+                  img(src='assets/img/bootstrap-mdo-sfmoma-03.jpg', alt='')
+                  .carousel-caption
+                    h4 Third Thumbnail label
+                    p
+                      | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+              a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+            .alert.alert-info
+              strong Heads up!
+              | When implementing this carousel, remove the images we have provided and replace them with your own.
+            hr
+            h2 Using bootstrap-carousel.js
+            p Call via javascript:
+            pre.prettyprint.linenums.
+              \n$('.carousel').carousel()              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 50px;') type
+                  th(style='width: 50px;') default
+                  th description
+              tbody
+                tr
+                  td interval
+                  td number
+                  td 5000
+                  td The amount of time to delay between automatically cycling an item.
+                tr
+                  td pause
+                  td string
+                  td "hover"
+                  td
+                    | Pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.
+            h3 Markup
+            p
+              | Data attributes are used for the previous and next conrols. Check out the example markup below.
+            pre.prettyprint.linenums.
+              \n<div id="myCarousel" class="carousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="active item">…</div>
+                  <div class="item">…</div>
+                  <div class="item">…</div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+                            
+            h3 Methods
+            h4 .carousel(options)
+            p
+              | Initializes the carousel with an optional options
+              code object
+              | and starts cycling through items.
+            pre.prettyprint.linenums.
+              \n$('.carousel').carousel({
+                interval: 2000
+              })
+                            
+            h4 .carousel('cycle')
+            p Cycles through the carousel items from left to right.
+            h4 .carousel('pause')
+            p Stops the carousel from cycling through items.
+            h4 .carousel(number)
+            p Cycles the carousel to a particular frame (0 based, similar to an array).
+            h4 .carousel('prev')
+            p Cycles to the previous item.
+            h4 .carousel('next')
+            p Cycles to the next item.
+            h3 Events
+            p
+              | Bootstrap's carousel class exposes two events for hooking into carousel functionality.
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 150px;') Event
+                  th Description
+              tbody
+                tr
+                  td slide
+                  td
+                    | This event fires immediately when the
+                    code slide
+                    | instance method is invoked.
+                tr
+                  td slid
+                  td This event is fired when the carousel has completed its slide transition.
+      section#typeahead
+        .page-header
+          h1
+            | Typeahead
+            small bootstrap-typeahead.js
+        .row
+          .span3.columns
+            h3 About
+            p
+              | A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.
+            a.btn(href='assets/js/bootstrap-typeahead.js', target='_blank') Download file
+          .span9.columns
+            h2 Example
+            p Start typing in the field below to show the typeahead results.
+            .well
+              input.span3(type='text', style='margin: 0 auto;', data-provide='typeahead', data-items='4', data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]')
+            hr
+            h2 Using bootstrap-typeahead.js
+            p Call the typeahead via javascript:
+            pre.prettyprint.linenums.
+              \n$('.typeahead').typeahead()              
+            h3 Options
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th(style='width: 100px;') Name
+                  th(style='width: 50px;') type
+                  th(style='width: 100px;') default
+                  th description
+              tbody
+                tr
+                  td source
+                  td array
+                  td [ ]
+                  td The data source to query against.
+                tr
+                  td items
+                  td number
+                  td 8
+                  td The max number of items to display in the dropdown.
+                tr
+                  td matcher
+                  td function
+                  td case insensitive
+                  td
+                    | The method used to determine if a query matches an item. Accepts a single argument, the
+                    code item
+                    | against which to test the query. Access the current query with
+                    code this.query
+                    | . Return a boolean
+                    code true
+                    | if query is a match.
+                tr
+                  td sorter
+                  td function
+                  td
+                    | exact match,
+                    br
+                    | case sensitive,
+                    br
+                    | case insensitive
+                  td
+                    | Method used to sort autocomplete results. Accepts a single argument
+                    code items
+                    | and has the scope of the typeahead instance. Reference the current query with
+                    code this.query
+                    | .
+                tr
+                  td highlighter
+                  td function
+                  td highlights all default matches
+                  td
+                    | Method used to highlight autocomplete results. Accepts a single argument
+                    code item
+                    | and has the scope of the typeahead instance. Should return html.
+            h3 Markup
+            p Add data attributes to register an element with typeahead functionality.
+            pre.prettyprint.linenums.
+              \n<input type="text" data-provide="typeahead">
+                            
+            h3 Methods
+            h4 .typeahead(options)
+            p Initializes an input with a typeahead.
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
